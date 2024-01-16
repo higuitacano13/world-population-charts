@@ -21,14 +21,14 @@ def read_csv(path):
 # ------ Obtener población ------- #
 def get_population(country_dic):
     population_dic = {
-        '2022' : int(country_dic['2022 Population']),
-        '2020' : int(country_dic['2020 Population']),
-        '2015' : int(country_dic['2015 Population']),
-        '2010' : int(country_dic['2010 Population']),
-        '2000' : int(country_dic['2000 Population']),
-        '1990' : int(country_dic['1990 Population']),
-        '1980' : int(country_dic['1980 Population']),
-        '1997' : int(country_dic['1970 Population']),
+        '2022' : int(country_dic['2022 Population']) / 1000,
+        '2020' : int(country_dic['2020 Population']) / 1000,
+        '2015' : int(country_dic['2015 Population']) / 1000,
+        '2010' : int(country_dic['2010 Population']) / 1000,
+        '2000' : int(country_dic['2000 Population']) / 1000,
+        '1990' : int(country_dic['1990 Population']) / 1000,
+        '1980' : int(country_dic['1980 Population']) / 1000,
+        '1997' : int(country_dic['1970 Population']) / 1000,
     }
     labels = population_dic.keys()
     values = population_dic.values()

@@ -47,7 +47,7 @@ def test_population_chart(data):
     if(len(result) > 0):
         country = result[0]
         keys, values = get_population(country)
-        charts.generate_bar_chart(keys, values)
+        charts.generate_bar_chart(country['Country/Territory'],keys, values)
 
 # ------ Ejecutar prueba gráfica de pastel con porcentaje poblacional ------- #
 def test_percentages_chart(data):
@@ -71,5 +71,5 @@ def test_percentages_chart(data):
     data = list(filter(lambda item : item['Continent'] == continent, data))
     countries = list(map(lambda x: x['Country/Territory'], data))
     percentages = list(map(lambda x : x['World Population Percentage'], data))
-    charts.generate_pie_char(countries, percentages)
+    charts.generate_pie_char(continent,countries, percentages)
 

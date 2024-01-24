@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # -------- Generar Gráfica de Barras -------- #
-def generate_bar_chart(labels, values):
+def generate_bar_chart(name, labels, values):
     # --- Seleccionar paleta de colores --- #
     colors = plt.cm.viridis(np.linspace(0, 1, len(labels)))
 
@@ -16,12 +16,14 @@ def generate_bar_chart(labels, values):
     plt.title('Población por Año')
 
     # --- Mostrar gráfica --- #
-    plt.show()
+    plt.savefig(f'./images/{name}.png')
+    plt.close()
 
 # -------- Generar Gráfica de Torta -------- #
-def generate_pie_char(labels, values):
+def generate_pie_char(name,labels, values):
     fig, ax = plt.subplots()
     ax.pie(values, labels = labels)
     ax.axis('equal')
     plt.title('Porcentaje poblacional')
-    plt.show()
+    plt.savefig(f'./images/{name}.png')
+    plt.close()
